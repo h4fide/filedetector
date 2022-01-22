@@ -25,7 +25,6 @@ To see how the tool works,
    from dhooks import Webhook, File, Embed
    hook = Webhook('WEBHOOK')
    file = File('file path', name='name')
-   embed.add_field(name='file name',  value='message')
    hook.send('message', file=file, embed=embed) #send file
    ```
 3. Run sample code.
