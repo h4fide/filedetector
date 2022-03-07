@@ -9,9 +9,10 @@ folder = r'FOLDER PATH' #PUT '/' AT THE END OF THE PATH'
 hook = Webhook('WEBHOOK')
 watch = notifier.add_watch(folder)
 embed = Embed(
-    description='Filedetector',
+    description='FileSpotter',
     color=0x5CDBF0
     )
+
 print('Started')
 for event in notifier.event_gen():
     if event is not None:
@@ -24,7 +25,8 @@ for event in notifier.event_gen():
             embed.add_field(name=filename,  value='Voila :smiling_face_with_3_hearts: ')
             hook.send('New File', file=file, embed=embed)
             print("Send it :)")
-            time.sleep(10)
-            os.remove(filepath)
-            print(filename + " Has been removed")
-            sys.exit("Quiting...")
+            
+            #time.sleep(10)  
+            #os.remove(filepath) if you want to delete the file after
+            #print(filename + " Has been removed")
+            #sys.exit("Quiting...")
